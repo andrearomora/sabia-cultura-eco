@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import {ItemListContainer} from "./components/ItemListContainer/ItemListContainer";
+import {NavBar} from "./components/NavBar/NavBar";
+import {ItemCount} from './components/ItemCount/ItemCount'
 
 function App() {
+
+  const styles = {
+    color: "black",
+    dontSize: "150px"
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <NavBar/>
+        <ItemListContainer greeting={"Bolsas ecológicas en algodón"}/>
+        {/* <ItemCount/> */}
     </div>
   );
 }

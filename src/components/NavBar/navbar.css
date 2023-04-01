@@ -1,0 +1,14 @@
+.nav-link {
+    text-align: center; 
+}
+
+.header__logo {
+    height: 50px; }
+
+.header__iconos {
+    text-align: center; }
+
+.header__iconos a {
+    padding: 10px;
+    color: #2C2C2C;
+    font-size: 24px; }

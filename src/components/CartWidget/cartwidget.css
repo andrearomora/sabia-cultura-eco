@@ -1,0 +1,13 @@
+.cart{
+    height: 25px;
+    width: 25px;
+}
+.cartElements{
+    background-color: rgb(213, 20, 20);
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: whitesmoke;
+    font-weight: 600;
+    margin-left: -5px;
+}
