@@ -1,6 +1,30 @@
 .homeBanner__titulo {
     font-size: 35px; 
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding-top: 50px;
+    font-weight: 700;}
+    @media (max-width: 600px) {
+        .homeBanner__titulo {
+            font-size: 35px;
+            transform: scaleX(-1);
+            background: rgba(245, 245, 245, 0.5); } }
+            
+.categories {
+    display: flex;
+    justify-content: center;
+    list-style: none; }
+    .categories a {
+        text-decoration: none;
+        color: #2C2C2C;
+        margin: 10px 0px;
+        padding: 10px 5%;
+        font-weight: 800;
+        border-bottom: solid transparent; }
+        .categories a:hover {
+        border-bottom: #11b28e solid; 
+        text-decoration: none;
+        color: #2C2C2C;}
+        .categories a .categorieFocus {
+        border-bottom: #11b28e solid; }
+
+.products__container{
+    margin: 50px;
 }

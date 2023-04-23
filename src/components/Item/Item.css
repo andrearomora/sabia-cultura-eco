@@ -1,0 +1,19 @@
+.cardItem {
+    width: 18rem;
+    border-color: none;
+    margin-bottom: 5%;
+}
+.btn-card {
+    background-color: #11b28e;
+    color: whitesmoke;
+    padding: 5px 15px;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 5px;
+    border-color: #11b28e;
+    text-decoration: none; }
+
+.btn-card:hover {
+    background-color: #01a27f;
+    text-decoration: none;
+    color: whitesmoke; }

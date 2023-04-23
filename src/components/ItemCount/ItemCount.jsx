@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
 import './itemcount.css'
 
-export const ItemCount = () => {
+export const ItemCount = ({stock,initial,onAdd}) => {
     
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(initial);
 
     const sumar = () => {
-        setCounter(counter+1) 
+        if(counter<stock){
+            setCounter(counter+1)
+        }
     }
 
     const restar = () => {
-        if(counter>0){
+        if(counter>1){
             setCounter(counter-1)
         }
         
     }
 
-    const setear = () => {
-        setCounter(0)
-    }
-
     return(
         <>
-            <h4>{counter}</h4>
+            
             <div>
-                <button onClick={sumar}>+</button>
                 <button onClick={restar}>-</button>
-                <button onClick={setear}>↺</button>
+                <h4>{counter}</h4>
+                <button onClick={sumar}>+</button>
+            </div>
+            <div>
+                <button onClick={(() => onAdd(counter))} disabled={!stock}>Agregar al carrito</button>
             </div>
         </>
     )
