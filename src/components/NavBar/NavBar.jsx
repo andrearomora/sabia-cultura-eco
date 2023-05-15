@@ -16,7 +16,7 @@ export const NavBar = () => {
             <div id="navbarSupportedContent" className="collapse navbar-collapse navbarAlign">
                 <ul className="navbar-nav ml-auto mx-auto">
                     <li className="nav-item"><Link to="/nosotros" className="nav-link">SOBRE NOSOTROS</Link></li>
-                    <li className="nav-item"><Link to="/category/totes/" className="nav-link">TOTES</Link></li>
+                    <li className="nav-item"><Link to="/tienda" className="nav-link">TIENDA</Link></li>
                     <li className="nav-item"><Link to="/contacto" className="nav-link">CONTACTO</Link></li>
                 </ul>
                 <div className="header__iconos">

@@ -1,31 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {ItemCount} from '../ItemCount/ItemCount'
+import {Link} from 'react-router-dom'
 import './ItemDetail.css'
 
 
 export const ItemDetail = ({id,name,price,stock,large,width,fabric,description,unitsPerPack,category,discount,img,size}) => {
     
+    const [quantityAdded, setQuantityAdded] = useState(0);
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+    }
+
     return (
         <>
-            <picture>
-                <img src={`/../../../${img}`} alt={name} className='imgDetail'/>
-            </picture>
-            <div>
-                <h2>{name}</h2>
-                <h3>${price}</h3>
-                <h4>Unidades disponibles: {stock}</h4>
-                <div>
-                    <h4>Descripción</h4>
-                    <p>{description}</p>
-                </div>
-                <div>
-                    <h4>Características</h4>
-                    <p>Medidas: {width}cm de ancho x {large}cm de largo</p>
-                    <p>Material: {fabric}</p>
-                    <p>Unidades por compra: {unitsPerPack}</p>
+        <div className='container fichaProducto'>
+            <div className="row fichaProducto__contenedor">
+                <picture className='col col-md-7 fichaProducto__contenedor___img'>
+                    <img src={`/../../../${img}`} alt={name} className='imgDetail'/>
+                </picture>
+                <div className='col col-md-5 fichaProducto__contenedor___info'>
+                    <h2>{name}</h2>
+                    <h3>${price}</h3>
+                    <p>Unidades disponibles: {stock}</p>
+                    <div>
+                        <h4>Descripción</h4>
+                        <p>{description}</p>
+                    </div>
+                    <div>
+                        <h4>Características</h4>
+                        <p>Medidas: {width}cm de ancho x {large}cm de largo</p>
+                        <p>Material: {fabric}</p>
+                        <p>Unidades por compra: {unitsPerPack}</p>
+                    </div>
+                    <div>
+                        {
+                            quantityAdded > 0 ? (
+                                <Link to='/cart' className="btn-item">Terminar compra</Link>
+                            ) : (
+                                <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
-            <ItemCount initial={1} stock={stock} onAdd={(quantity)=> console.log('Cantidad agregada', quantity)}/>
+        </div>
+            
         </>
     )
 }

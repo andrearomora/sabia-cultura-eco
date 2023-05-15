@@ -76,3 +76,49 @@
     background-color: #01a27f;
     text-decoration: none;
     color: whitesmoke; }
+
+    .homeBeneficios {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 15vh;
+        text-align: center;
+        background-color: whitesmoke; }
+        @media (max-width: 600px) {
+            .homeBeneficios {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                padding: 30px;
+                text-align: center;
+                background-color: whitesmoke; } }
+    
+    .homeBeneficios__beneficio, .contacto__datos div {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        width: 20%; }
+        .homeBeneficios__beneficio svg, .contacto__datos div svg {
+            height: 40px;
+            width: 40px;
+            font-size: 40px; }
+        .homeBeneficios__beneficio span, .contacto__datos div span {
+            font-size: 20px;
+            padding-left: 5%; }
+        @media (max-width: 800px) {
+            .homeBeneficios__beneficio, .contacto__datos div {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                width: 80%; }
+            .homeBeneficios__beneficio svg, .contacto__datos div svg {
+                height: 30px;
+                width: 30px;
+                font-size: 30px; }
+            .homeBeneficios__beneficio span, .contacto__datos div span {
+                font-size: 15px;
+                padding-left: 0%; } }
