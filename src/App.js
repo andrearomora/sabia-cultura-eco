@@ -3,6 +3,8 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import {NavBar} from "./components/NavBar/NavBar";
 import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
+import { CartProvider } from "./context/CartContext";
+import { Cart } from "./components/Cart/Cart";
 
 import {
   BrowserRouter as Router,
@@ -18,15 +20,18 @@ function App() {
 
     <div className="App">
       <Router>
-      <NavBar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/tienda' element={<ItemListContainer/>}/>
-          {/* <Route path='/category/:categoryId' element={<ItemListContainer/>}/> */}
-          <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
-          <Route path='*' element={<Navigate to ='/'/>}/>
-        </Routes>
-      <Footer/>
+        <CartProvider>
+          <NavBar/>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/tienda' element={<ItemListContainer/>}/>
+              {/* <Route path='/category/:categoryId' element={<ItemListContainer/>}/> */}
+              <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+              <Route path='/carrito' element={<Cart/>}/>
+              <Route path='*' element={<Navigate to ='/'/>}/>
+            </Routes>
+          <Footer/>
+        </CartProvider>
       </Router>
     </div>
   );
