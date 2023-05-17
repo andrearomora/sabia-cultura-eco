@@ -1,16 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+import firebase from 'firebase'
+import 'firebase/firestore'
+import Swal from 'sweetalert2'
 import './Checkout.css'
+import { getFirestore } from '../../Firebase/config'
 
 export const Checkout = () => {
 
+    const {cart, total, clearCart} = useContext(CartContext)
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
     const [phone, setPhone] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault()
+    
+        const order = {
+            buyer: {
+                email,
+                name,
+                lastName,
+                phone
+            },
+            item: cart,
+            total_price: total(),
+            data: firebase.firestore.Timestamp.fromDate(new Date())
+        }
+        console.log(order)
+
+        const db = getFirestore()
+
+    const orders = db.collection('orders')
+
+    orders.add(order)
+    .then((res)=>{
+        Swal.fire({
+            icon: 'success',
+            title: 'Gracias por comprometerte con el medio ambiente',
+            text: `Tu orden de compra fue registrada con éxito, este es tu número de seguimiento: ${res.id}`,
+            willClose: () =>{
+                clearCart()
+            }
+        })
+    })
+    .finally(()=>{
+        console.log('Orden registrada con éxito')
+    })
     }
+
+    
+
     return (
         <div className='py-5'>
             <h1>Checkout</h1>
