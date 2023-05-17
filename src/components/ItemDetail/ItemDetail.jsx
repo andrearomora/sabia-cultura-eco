@@ -27,7 +27,7 @@ export const ItemDetail = ({id,name,price,stock,large,width,fabric,description,u
         <div className='container fichaProducto'>
             <div className="row fichaProducto__contenedor">
                 <picture className='col col-md-7 fichaProducto__contenedor___img'>
-                    <img src={`/../../../${img}`} alt={name} className='imgDetail'/>
+                    <img src={img} alt={name} className='imgDetail'/>
                 </picture>
                 <div className='col col-md-5 fichaProducto__contenedor___info'>
                     <h2>{name}</h2>
