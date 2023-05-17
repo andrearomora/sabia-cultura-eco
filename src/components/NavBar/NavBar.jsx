@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 export const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg py-3 navbar-light bg-light shadow-sm">
+        <nav className="navbar navbar-expand-lg py-1 navbar-light bg-light shadow-sm">
         <div className="container navbarAlign">
             <Link to="/"><img src={logo} alt="" className="d-inline-block align-middle mr-2 header__logo"/></Link>
             

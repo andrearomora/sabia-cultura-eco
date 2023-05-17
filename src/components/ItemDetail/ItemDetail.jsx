@@ -46,7 +46,7 @@ export const ItemDetail = ({id,name,price,stock,large,width,fabric,description,u
                     <div>
                         {
                             quantityAdded > 0 ? (
-                                <Link to='/cart' className="btn-item">Terminar compra</Link>
+                                <Link to='/carrito' className="btn-item">Terminar compra</Link>
                             ) : (
                                 <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
                             )
