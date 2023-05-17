@@ -8,15 +8,16 @@ import { Link } from 'react-router-dom'
 export const Cart = () => {
     const {cart, clearCart, totalQuantity, total, removeItem} = useContext(CartContext)
 
-    if(totalQuantity === 0){
+    if(totalQuantity() === 0){
         return(
-            <div>
+            <div className='container cart-header py-5'>
                 <h1>No hay items en el carrito</h1>
-                <Link to='/tienda' className='btn-cart'>Productos</Link>
+                <Link to='/tienda' className='btn-cart'>TIENDA</Link>
             </div>
         )
     }
     return (
+        
         <div className='py-5'>
             <div className='container cart-header col-md-8 col-sm-10'>
                 <h1>Carrito de compras</h1>

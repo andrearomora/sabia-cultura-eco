@@ -1,0 +1,23 @@
+.btn-checkout {
+    background-color: #11b28e;
+    color: whitesmoke;
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #11b28e;
+    text-decoration: none; 
+    border-style: none;
+    margin: 1rem;}
+.btn-checkout:hover {
+    background-color: #01a27f;
+    text-decoration: none;
+    color: whitesmoke; }
+.link-checkout{
+    color: #11b28e;
+    text-decoration: none;
+}
+.link-checkout:hover{
+    color: #01a27f;
+    text-decoration: none;
+}
